@@ -10,6 +10,7 @@ from genesis.audit import (
     finish_before_after,
     highlighted_names,
     load_profile,
+    ranked,
     run_measurement,
     start_before_after,
     summarize,
@@ -282,3 +283,9 @@ def test_report_in_english_when_the_profile_says_so(reg):
     assert '<html lang="en">' in html and "Do AI assistants recommend Acme?" in html
     assert "2 of 9 answers" in html and "22%" in html and " de 9" not in html
     assert "noindex" not in html and 'content="noindex"' in render(s, noindex=True)
+
+
+def test_ties_are_ordered_by_name_so_reports_are_reproducible():
+    from collections import Counter
+
+    assert ranked(Counter({"b.test": 2, "c.test": 5, "a.test": 2})) == [("c.test", 5), ("a.test", 2), ("b.test", 2)]

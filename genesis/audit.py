@@ -102,6 +102,11 @@ def run_measurement(
     return exp_id
 
 
+def ranked(counts: Counter) -> list[tuple[str, int]]:
+    """De más a menos; los empates por nombre, para que dos ejecuciones den el mismo informe."""
+    return sorted(counts.items(), key=lambda item: (-item[1], item[0]))
+
+
 def summarize(registry: Registry, exp_id: str, target_name: str | None = None) -> dict:
     """Resumen calculado solo a partir de las respuestas guardadas.
 
@@ -168,7 +173,7 @@ def summarize(registry: Registry, exp_id: str, target_name: str | None = None) -
 
     table = sorted((brand_row(b) for b in brands), key=lambda r: (-r["mentions"], r["name"]))
     prompts = [
-        {**row, "named": row["named"].most_common()} for row in per_prompt.values()
+        {**row, "named": ranked(row["named"])} for row in per_prompt.values()
     ]
     return {
         "id": exp_id,
@@ -184,8 +189,8 @@ def summarize(registry: Registry, exp_id: str, target_name: str | None = None) -
         "prompts_covered": sum(1 for p in prompts if p["target"] > 0),
         "answers": n,
         "errors": len(runs) - n,
-        "sources": sources.most_common(15),
-        "others": [(name, k) for name, k in others.most_common(12) if k >= 2],
+        "sources": ranked(sources)[:15],
+        "others": [(name, k) for name, k in ranked(others)[:12] if k >= 2],
         "own_domains": list(target.domains),
         "cost_usd": round(sum(r["cost_usd"] for r in runs), 4),
         "seconds": round(sum(r["seconds"] for r in runs), 1),

@@ -4,7 +4,7 @@
 
 Site and live example: https://pitiflautico.github.io/mentionrate/
 
-## Latest measurement
+## Measurements
 
 <!-- results:start -->
 Uptime monitoring tools: 8 buyer questions, each asked 6 times to Claude (sonnet) with web search on 2026-11-14. 48 answers.
@@ -36,6 +36,39 @@ Uptime monitoring tools: 8 buyer questions, each asked 6 times to Claude (sonnet
 | StatusGator | 0 of 48 | 0% | 0%–7% |
 | Updown.io | 0 of 48 | 0% | 0%–7% |
 | Uptimia | 0 of 48 | 0% | 0%–7% |
+
+Web analytics tools: 8 buyer questions, each asked 6 times to Claude (sonnet) with web search on 2026-11-14. 48 answers.
+
+| Product | Answers that name it | Share | 95% interval |
+|---|---|---|---|
+| Plausible | 44 of 48 | 92% | 80%–97% |
+| Umami | 34 of 48 | 71% | 57%–82% |
+| Fathom | 33 of 48 | 69% | 55%–80% |
+| Google Analytics | 32 of 48 | 67% | 53%–78% |
+| Matomo | 32 of 48 | 67% | 53%–78% |
+| Simple Analytics | 30 of 48 | 62% | 48%–75% |
+| PostHog | 28 of 48 | 58% | 44%–71% |
+| Cloudflare Web Analytics | 12 of 48 | 25% | 15%–39% |
+| Clicky | 7 of 48 | 15% | 7%–27% |
+| Amplitude | 6 of 48 | 12% | 6%–25% |
+| Mixpanel | 6 of 48 | 12% | 6%–25% |
+| OpenPanel | 6 of 48 | 12% | 6%–25% |
+| Pirsch | 6 of 48 | 12% | 6%–25% |
+| Swetrix | 6 of 48 | 12% | 6%–25% |
+| GoatCounter | 5 of 48 | 10% | 5%–22% |
+| Rybbit | 5 of 48 | 10% | 5%–22% |
+| Litlyx | 2 of 48 | 4% | 1%–14% |
+| Piwik PRO | 2 of 48 | 4% | 1%–14% |
+| Seline | 1 of 48 | 2% | 0%–11% |
+| Cabin | 0 of 48 | 0% | 0%–7% |
+| Counter.dev | 0 of 48 | 0% | 0%–7% |
+| DataFast | 0 of 48 | 0% | 0%–7% |
+| Microanalytics | 0 of 48 | 0% | 0%–7% |
+| Statcounter | 0 of 48 | 0% | 0%–7% |
+| TelemetryDeck | 0 of 48 | 0% | 0%–7% |
+| Tinylytics | 0 of 48 | 0% | 0%–7% |
+| Usermaven | 0 of 48 | 0% | 0%–7% |
+| Vercel Analytics | 0 of 48 | 0% | 0%–7% |
 <!-- results:end -->
 
 Every answer behind these numbers is in [`data/measurements/`](data/measurements/), one JSON object per line, exactly as the assistant returned it.
@@ -52,7 +85,7 @@ Every answer behind these numbers is in [`data/measurements/`](data/measurements
 
 ## How it works
 
-1. A profile lists the product, its competitors (name, aliases, domains) and the buyer questions. See [`perfiles/uptime-monitoring.json`](perfiles/uptime-monitoring.json).
+1. A profile lists the product, its competitors (name, aliases, domains) and the buyer questions. See [`perfiles/`](perfiles/).
 2. Each question is asked several times, because assistants do not answer the same way twice. Every answer is stored unmodified in an append-only SQLite registry; the database rejects updates and deletes.
 3. A fixed counting rule decides who was named and who was cited as a source. No model grades the answers.
 4. For before/after experiments, the hypothesis, the metric and the success threshold are sealed with a hash before the first answer is collected. The verdict is `SUCCESS`, `FAIL` or `INCONCLUSIVE`, and it comes from counting.
@@ -79,7 +112,7 @@ Command help, code comments and registry labels are in Spanish; reports come out
 - **One assistant.** Only Claude has been measured, through its command-line interface, which can differ from what a person sees in the app.
 - **Wide margins.** With 48 answers the 95% intervals are wide, and repeated answers to one question are not independent, so the true intervals are somewhat wider than shown.
 - **Only tracked products are counted.** If the assistant recommends a product that is not in the profile, it is missing from the table.
-- **The questions shape the result.** One of the eight uptime questions asks for an alternative to UptimeRobot, so its count includes answers that could hardly avoid naming it.
+- **The questions shape the result.** One of the eight uptime questions asks for an alternative to UptimeRobot, and one web analytics question asks for an alternative to Google Analytics, so their counts include answers that could hardly avoid naming them.
 - **Named is not praised.** A product counts as named even when the answer advises against it.
 - **The detector benchmark has one author**, the same as the detector.
 
