@@ -274,6 +274,9 @@ def test_landing_uses_measured_numbers(reg):
     assert "Acme appears in the wording of a question" in render_landing(asked, "M", "https://example.test/new")
     full = render_landing(s, "M", "https://example.test/new", category="widgets", more="report.html")
     assert "A real example: widgets</h2>" in full and "href='report.html'" in full
+    assert "More categories measured" not in full and "What predicts being named" not in full
+    rich = render_landing(s, "M", "x@y.test", categories=[("forms", "f/a.html")], finding=[("forms", "sealed test", 0.812)])
+    assert "<a href='f/a.html'>Forms</a>" in rich and "<td>sealed test</td><td class='num'>0.81</td>" in rich
     assert "Of the 2 products tracked, 1 were named in fewer than a quarter of the answers, 0 of them never." in html
 
 

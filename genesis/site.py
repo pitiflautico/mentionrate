@@ -24,6 +24,8 @@ h2 { font-size:1.25rem; margin:52px 0 12px; }
 .fill { height:100%; background:var(--accent); border-radius:6px; }
 .num { text-align:right; font-variant-numeric:tabular-nums; }
 .note { color:var(--soft); font-size:.9rem; margin:14px 0 0; }
+table { width:100%; border-collapse:collapse; font-size:.95rem; } th, td { text-align:left; padding:7px 6px; border-bottom:1px solid var(--line); }
+th { color:var(--soft); font-weight:600; } th.num, td.num { text-align:right; }
 a { color:var(--accent); } .cta { color:var(--bg); }
 ol, ul { padding-left:22px; } li { margin:6px 0; }
 .plans { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
@@ -34,9 +36,34 @@ footer { margin-top:56px; color:var(--soft); font-size:.88rem; }
 
 
 def render_landing(
-    summary: dict, brand: str, contact: str, shown: int = 8, category: str = "", more: str = ""
+    summary: dict,
+    brand: str,
+    contact: str,
+    shown: int = 8,
+    category: str = "",
+    more: str = "",
+    categories: list[tuple[str, str]] | None = None,
+    finding: list[tuple[str, str, float]] | None = None,
 ) -> str:
-    """``contact`` es un correo o una URL donde pedir el informe; ``more`` enlaza la medición completa."""
+    """``contact`` es un correo o una URL donde pedir el informe; ``more`` enlaza la medición completa.
+
+    ``categories`` son (nombre, enlace) de las demás mediciones publicadas; ``finding`` son
+    (categoría, papel, correlación) de la prueba de qué predice las menciones.
+    """
+    other_html = ""
+    if categories:
+        links = "".join(f"<li><a href='{escape(href)}'>{escape(label.capitalize())}</a></li>" for label, href in categories)
+        other_html = f"<h2>More categories measured</h2>\n<ul>{links}</ul>"
+    finding_html = ""
+    if finding:
+        rows = "".join(
+            f"<tr><td>{escape(label.capitalize())}</td><td>{escape(role)}</td><td class='num'>{rho:.2f}</td></tr>"
+            for label, role, rho in finding
+        )
+        finding_html = f"""<h2>What predicts being named</h2>
+<p>The pages an assistant cites most predict which products it names. We chose the rule on some categories and sealed the prediction before testing it on others.</p>
+<div class="card"><table><thead><tr><th>Category</th><th>Used for</th><th class="num">Rank correlation</th></tr></thead><tbody>{rows}</tbody></table>
+<p class="note">Spearman correlation between a product's presence on the 20 most cited pages and how often it is named. It is a correlation: well-known products are both written about and named, and some products appear on cited pages without ever being named.</p></div>"""
     category = category or summary["profile_id"].replace("-", " ")
     more_link = f" <a href='{escape(more)}'>See every question, answer and source.</a>" if more else ""
     in_question = [
@@ -67,6 +94,10 @@ def render_landing(
 <h2>A real example: {escape(category)}</h2>
 <div class="card">{rows}
 <p class="note">Share of {n} answers that name each product. {len(summary['prompts'])} buyer questions, each asked {summary['samples']} times to Claude ({escape(summary['model'])}) with web search, on {escape(summary['created_at'][:10])}. Of the {len(summary['brands'])} products tracked, {low} were named in fewer than a quarter of the answers, {never} of them never.{bias} A product counts as named even when the answer advises against it, and products outside the tracked list are not counted.{more_link}</p></div>
+
+{other_html}
+
+{finding_html}
 
 <h2>How it works</h2>
 <ol>
