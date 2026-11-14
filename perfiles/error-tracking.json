@@ -1,0 +1,183 @@
+{
+ "id": "error-tracking",
+ "language": "en",
+ "brand": {
+  "name": "Sentry",
+  "aliases": [],
+  "domains": [
+   "sentry.io"
+  ]
+ },
+ "competitors": [
+  {
+   "name": "Bugsnag",
+   "aliases": [],
+   "domains": [
+    "bugsnag.com"
+   ]
+  },
+  {
+   "name": "Rollbar",
+   "aliases": [],
+   "domains": [
+    "rollbar.com"
+   ]
+  },
+  {
+   "name": "Datadog",
+   "aliases": [],
+   "domains": [
+    "datadoghq.com"
+   ]
+  },
+  {
+   "name": "New Relic",
+   "aliases": [],
+   "domains": [
+    "newrelic.com"
+   ]
+  },
+  {
+   "name": "Honeybadger",
+   "aliases": [],
+   "domains": [
+    "honeybadger.io"
+   ]
+  },
+  {
+   "name": "Raygun",
+   "aliases": [],
+   "domains": [
+    "raygun.com"
+   ]
+  },
+  {
+   "name": "AppSignal",
+   "aliases": [],
+   "domains": [
+    "appsignal.com"
+   ]
+  },
+  {
+   "name": "GlitchTip",
+   "aliases": [],
+   "domains": [
+    "glitchtip.com"
+   ]
+  },
+  {
+   "name": "Highlight.io",
+   "aliases": [],
+   "domains": [
+    "highlight.io"
+   ]
+  },
+  {
+   "name": "Better Stack",
+   "aliases": [
+    "BetterStack"
+   ],
+   "domains": [
+    "betterstack.com"
+   ]
+  },
+  {
+   "name": "LogRocket",
+   "aliases": [],
+   "domains": [
+    "logrocket.com"
+   ]
+  },
+  {
+   "name": "Airbrake",
+   "aliases": [],
+   "domains": [
+    "airbrake.io"
+   ]
+  },
+  {
+   "name": "TrackJS",
+   "aliases": [],
+   "domains": [
+    "trackjs.com"
+   ]
+  },
+  {
+   "name": "Bugsink",
+   "aliases": [],
+   "domains": [
+    "bugsink.com"
+   ]
+  },
+  {
+   "name": "Exceptionless",
+   "aliases": [],
+   "domains": [
+    "exceptionless.com"
+   ]
+  },
+  {
+   "name": "Telebugs",
+   "aliases": [],
+   "domains": [
+    "telebugs.com"
+   ]
+  },
+  {
+   "name": "PostHog",
+   "aliases": [],
+   "domains": [
+    "posthog.com"
+   ]
+  },
+  {
+   "name": "Firebase Crashlytics",
+   "aliases": [
+    "Crashlytics"
+   ],
+   "domains": []
+  },
+  {
+   "name": "Embrace",
+   "aliases": [],
+   "domains": [
+    "embrace.io"
+   ],
+   "case_sensitive": true
+  }
+ ],
+ "prompts": [
+  {
+   "id": "q1",
+   "text": "What are the best error tracking tools for a small team?"
+  },
+  {
+   "id": "q2",
+   "text": "What is a good alternative to Sentry?"
+  },
+  {
+   "id": "q3",
+   "text": "Which error tracking tools have the best free plan?"
+  },
+  {
+   "id": "q4",
+   "text": "What is the cheapest error tracking tool for a startup?"
+  },
+  {
+   "id": "q5",
+   "text": "Which open source or self-hosted error tracking tools are there?"
+  },
+  {
+   "id": "q6",
+   "text": "Which error tracking tool is easiest to set up for a solo developer?"
+  },
+  {
+   "id": "q7",
+   "text": "Which error tracking tools are hosted in the EU or strongest on privacy?"
+  },
+  {
+   "id": "q8",
+   "text": "Which error tracking tool is best for a growing SaaS company?"
+  }
+ ]
+}

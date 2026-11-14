@@ -1,0 +1,187 @@
+{
+ "id": "feature-flags",
+ "language": "en",
+ "brand": {
+  "name": "LaunchDarkly",
+  "aliases": [],
+  "domains": [
+   "launchdarkly.com"
+  ]
+ },
+ "competitors": [
+  {
+   "name": "Unleash",
+   "aliases": [],
+   "domains": [
+    "getunleash.io"
+   ],
+   "case_sensitive": true
+  },
+  {
+   "name": "Flagsmith",
+   "aliases": [],
+   "domains": [
+    "flagsmith.com"
+   ]
+  },
+  {
+   "name": "GrowthBook",
+   "aliases": [],
+   "domains": [
+    "growthbook.io"
+   ]
+  },
+  {
+   "name": "PostHog",
+   "aliases": [],
+   "domains": [
+    "posthog.com"
+   ]
+  },
+  {
+   "name": "Statsig",
+   "aliases": [],
+   "domains": [
+    "statsig.com"
+   ]
+  },
+  {
+   "name": "Split",
+   "aliases": [],
+   "domains": [
+    "split.io"
+   ],
+   "case_sensitive": true
+  },
+  {
+   "name": "ConfigCat",
+   "aliases": [],
+   "domains": [
+    "configcat.com"
+   ]
+  },
+  {
+   "name": "Flipt",
+   "aliases": [],
+   "domains": [
+    "flipt.io"
+   ]
+  },
+  {
+   "name": "DevCycle",
+   "aliases": [],
+   "domains": [
+    "devcycle.com"
+   ]
+  },
+  {
+   "name": "Optimizely",
+   "aliases": [],
+   "domains": [
+    "optimizely.com"
+   ]
+  },
+  {
+   "name": "Hypertune",
+   "aliases": [],
+   "domains": [
+    "hypertune.com"
+   ]
+  },
+  {
+   "name": "Featurevisor",
+   "aliases": [],
+   "domains": [
+    "featurevisor.com"
+   ]
+  },
+  {
+   "name": "Tggl",
+   "aliases": [],
+   "domains": [
+    "tggl.io"
+   ]
+  },
+  {
+   "name": "Bucket",
+   "aliases": [],
+   "domains": [
+    "bucket.co"
+   ],
+   "case_sensitive": true
+  },
+  {
+   "name": "GO Feature Flag",
+   "aliases": [],
+   "domains": [
+    "gofeatureflag.org"
+   ]
+  },
+  {
+   "name": "FeatBit",
+   "aliases": [],
+   "domains": [
+    "featbit.co"
+   ]
+  },
+  {
+   "name": "Flipper",
+   "aliases": [],
+   "domains": [
+    "flippercloud.io"
+   ],
+   "case_sensitive": true
+  },
+  {
+   "name": "Firebase Remote Config",
+   "aliases": [],
+   "domains": []
+  },
+  {
+   "name": "AWS AppConfig",
+   "aliases": [],
+   "domains": []
+  },
+  {
+   "name": "Eppo",
+   "aliases": [],
+   "domains": [
+    "geteppo.com"
+   ]
+  }
+ ],
+ "prompts": [
+  {
+   "id": "q1",
+   "text": "What are the best feature flag tools for a small team?"
+  },
+  {
+   "id": "q2",
+   "text": "What is a good alternative to LaunchDarkly?"
+  },
+  {
+   "id": "q3",
+   "text": "Which feature flag tools have the best free plan?"
+  },
+  {
+   "id": "q4",
+   "text": "What is the cheapest feature flag tool for a startup?"
+  },
+  {
+   "id": "q5",
+   "text": "Which open source or self-hosted feature flag tools are there?"
+  },
+  {
+   "id": "q6",
+   "text": "Which feature flag tool is easiest to set up for a solo developer?"
+  },
+  {
+   "id": "q7",
+   "text": "Which feature flag tools are hosted in the EU or strongest on privacy?"
+  },
+  {
+   "id": "q8",
+   "text": "Which feature flag tool is best for a growing SaaS company?"
+  }
+ ]
+}

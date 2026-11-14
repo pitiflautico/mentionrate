@@ -134,3 +134,12 @@ def test_registry_persists_on_disk(tmp_path):
     again = Registry(path)
     assert again.experiment(exp)["design"] == {"k": "ñ"}
     again.close()
+
+
+def test_spearman_of_the_presence_model():
+    from modelo import ranks, spearman
+
+    assert ranks([10, 30, 20, 20]) == [1, 4, 2.5, 2.5]
+    assert spearman([1, 2, 3, 4], [10, 20, 30, 40]) == pytest.approx(1.0)
+    assert spearman([1, 2, 3, 4], [4, 3, 2, 1]) == pytest.approx(-1.0)
+    assert spearman([1, 1, 1], [1, 2, 3]) == 0.0

@@ -104,9 +104,162 @@ Scheduling tools: 8 buyer questions, each asked 6 times to Claude (sonnet) with 
 | Sprintful | 0 of 48 | 0% | 0%–7% |
 | Trafft | 0 of 48 | 0% | 0%–7% |
 | Vyte | 0 of 48 | 0% | 0%–7% |
+
+Online form builders: 8 buyer questions, each asked 6 times to Claude (sonnet) with web search on 2026-11-14. 48 answers.
+
+| Product | Answers that name it | Share | 95% interval |
+|---|---|---|---|
+| Tally | 44 of 48 | 92% | 80%–97% |
+| Typeform | 39 of 48 | 81% | 68%–90% |
+| Jotform | 34 of 48 | 71% | 57%–82% |
+| Fillout | 30 of 48 | 62% | 48%–75% |
+| Google Forms | 30 of 48 | 62% | 48%–75% |
+| Formbricks | 19 of 48 | 40% | 27%–54% |
+| Paperform | 17 of 48 | 35% | 23%–50% |
+| Microsoft Forms | 10 of 48 | 21% | 12%–34% |
+| Formstack | 7 of 48 | 15% | 7%–27% |
+| HeyForm | 7 of 48 | 15% | 7%–27% |
+| Cognito Forms | 6 of 48 | 12% | 6%–25% |
+| Formspree | 6 of 48 | 12% | 6%–25% |
+| Zoho Forms | 6 of 48 | 12% | 6%–25% |
+| Basin | 5 of 48 | 10% | 5%–22% |
+| SurveyMonkey | 5 of 48 | 10% | 5%–22% |
+| Youform | 3 of 48 | 6% | 2%–17% |
+| Formester | 2 of 48 | 4% | 1%–14% |
+| Fabform | 0 of 48 | 0% | 0%–7% |
+| Feathery | 0 of 48 | 0% | 0%–7% |
+| Formcarry | 0 of 48 | 0% | 0%–7% |
+| Getform | 0 of 48 | 0% | 0%–7% |
+| Wufoo | 0 of 48 | 0% | 0%–7% |
+
+Help desk tools: 8 buyer questions, each asked 6 times to Claude (sonnet) with web search on 2026-11-14. 48 answers.
+
+| Product | Answers that name it | Share | 95% interval |
+|---|---|---|---|
+| Freshdesk | 41 of 48 | 85% | 73%–93% |
+| Help Scout | 41 of 48 | 85% | 73%–93% |
+| Zendesk | 31 of 48 | 65% | 50%–77% |
+| Zoho Desk | 31 of 48 | 65% | 50%–77% |
+| Chatwoot | 22 of 48 | 46% | 33%–60% |
+| HubSpot Service Hub | 21 of 48 | 44% | 31%–58% |
+| Crisp | 20 of 48 | 42% | 29%–56% |
+| Intercom | 15 of 48 | 31% | 20%–45% |
+| Hiver | 14 of 48 | 29% | 18%–43% |
+| Gorgias | 7 of 48 | 15% | 7%–27% |
+| Tidio | 6 of 48 | 12% | 6%–25% |
+| Front | 5 of 48 | 10% | 5%–22% |
+| Plain | 3 of 48 | 6% | 2%–17% |
+| LiveAgent | 2 of 48 | 4% | 1%–14% |
+| Trengo | 2 of 48 | 4% | 1%–14% |
+| Pylon | 1 of 48 | 2% | 0%–11% |
+| Groove | 0 of 48 | 0% | 0%–7% |
+| HelpCrunch | 0 of 48 | 0% | 0%–7% |
+| Helpwise | 0 of 48 | 0% | 0%–7% |
+| Kayako | 0 of 48 | 0% | 0%–7% |
+| Missive | 0 of 48 | 0% | 0%–7% |
+| Re:amaze | 0 of 48 | 0% | 0%–7% |
+
+Email marketing tools: 8 buyer questions, each asked 6 times to Claude (sonnet) with web search on 2026-11-14. 48 answers.
+
+| Product | Answers that name it | Share | 95% interval |
+|---|---|---|---|
+| Mailchimp | 36 of 48 | 75% | 61%–85% |
+| MailerLite | 35 of 48 | 73% | 59%–83% |
+| Brevo | 33 of 48 | 69% | 55%–80% |
+| ActiveCampaign | 23 of 48 | 48% | 34%–62% |
+| ConvertKit | 18 of 48 | 38% | 25%–52% |
+| Sender | 16 of 48 | 33% | 22%–47% |
+| Listmonk | 13 of 48 | 27% | 17%–41% |
+| Klaviyo | 12 of 48 | 25% | 15%–39% |
+| beehiiv | 12 of 48 | 25% | 15%–39% |
+| Sendy | 8 of 48 | 17% | 9%–30% |
+| Omnisend | 7 of 48 | 15% | 7%–27% |
+| Flodesk | 6 of 48 | 12% | 6%–25% |
+| Loops | 6 of 48 | 12% | 6%–25% |
+| Mailjet | 6 of 48 | 12% | 6%–25% |
+| Buttondown | 4 of 48 | 8% | 3%–20% |
+| Constant Contact | 4 of 48 | 8% | 3%–20% |
+| Moosend | 4 of 48 | 8% | 3%–20% |
+| EmailOctopus | 3 of 48 | 6% | 2%–17% |
+| Campaign Monitor | 1 of 48 | 2% | 0%–11% |
+| GetResponse | 1 of 48 | 2% | 0%–11% |
+| AWeber | 0 of 48 | 0% | 0%–7% |
+| Drip | 0 of 48 | 0% | 0%–7% |
+
+Error tracking tools: 8 buyer questions, each asked 6 times to Claude (sonnet) with web search on 2026-11-14. 48 answers.
+
+| Product | Answers that name it | Share | 95% interval |
+|---|---|---|---|
+| Sentry | 48 of 48 | 100% | 93%–100% |
+| GlitchTip | 44 of 48 | 92% | 80%–97% |
+| Bugsink | 34 of 48 | 71% | 57%–82% |
+| Bugsnag | 34 of 48 | 71% | 57%–82% |
+| Rollbar | 30 of 48 | 62% | 48%–75% |
+| Honeybadger | 23 of 48 | 48% | 34%–62% |
+| PostHog | 19 of 48 | 40% | 27%–54% |
+| Highlight.io | 16 of 48 | 33% | 22%–47% |
+| Datadog | 15 of 48 | 31% | 20%–45% |
+| Airbrake | 6 of 48 | 12% | 6%–25% |
+| New Relic | 6 of 48 | 12% | 6%–25% |
+| Raygun | 6 of 48 | 12% | 6%–25% |
+| Telebugs | 6 of 48 | 12% | 6%–25% |
+| Better Stack | 5 of 48 | 10% | 5%–22% |
+| Firebase Crashlytics | 5 of 48 | 10% | 5%–22% |
+| AppSignal | 4 of 48 | 8% | 3%–20% |
+| LogRocket | 3 of 48 | 6% | 2%–17% |
+| Exceptionless | 1 of 48 | 2% | 0%–11% |
+| Embrace | 0 of 48 | 0% | 0%–7% |
+| TrackJS | 0 of 48 | 0% | 0%–7% |
+
+Feature flag tools: 8 buyer questions, each asked 6 times to Claude (sonnet) with web search on 2026-11-14. 48 answers.
+
+| Product | Answers that name it | Share | 95% interval |
+|---|---|---|---|
+| PostHog | 46 of 48 | 96% | 86%–99% |
+| Flagsmith | 45 of 48 | 94% | 83%–98% |
+| Unleash | 45 of 48 | 94% | 83%–98% |
+| GrowthBook | 44 of 48 | 92% | 80%–97% |
+| LaunchDarkly | 35 of 48 | 73% | 59%–83% |
+| ConfigCat | 34 of 48 | 71% | 57%–82% |
+| Statsig | 33 of 48 | 69% | 55%–80% |
+| Flipt | 17 of 48 | 35% | 23%–50% |
+| FeatBit | 13 of 48 | 27% | 17%–41% |
+| Split | 8 of 48 | 17% | 9%–30% |
+| DevCycle | 5 of 48 | 10% | 5%–22% |
+| GO Feature Flag | 5 of 48 | 10% | 5%–22% |
+| Featurevisor | 3 of 48 | 6% | 2%–17% |
+| Hypertune | 3 of 48 | 6% | 2%–17% |
+| Firebase Remote Config | 2 of 48 | 4% | 1%–14% |
+| AWS AppConfig | 1 of 48 | 2% | 0%–11% |
+| Flipper | 1 of 48 | 2% | 0%–11% |
+| Optimizely | 1 of 48 | 2% | 0%–11% |
+| Bucket | 0 of 48 | 0% | 0%–7% |
+| Eppo | 0 of 48 | 0% | 0%–7% |
+| Tggl | 0 of 48 | 0% | 0%–7% |
 <!-- results:end -->
 
 Every answer behind these numbers is in [`data/measurements/`](data/measurements/), one JSON object per line, exactly as the assistant returned it.
+
+## Finding: the pages an assistant cites predict who it names
+
+For each category the answers were split in two halves. From one half we took the 20 pages the assistant cited most and read them; a product's score is the share of that citation weight on pages that mention it, leaving out pages on its own domain. From the other half we took how often the product was named.
+
+The rule was chosen on three categories. Before looking at five more, the prediction was sealed in the registry: a rank correlation (Spearman) of at least 0.60 in four of the five.
+
+| Category | Used for | Rank correlation |
+|---|---|---|
+| Uptime monitoring | choosing the rule | 0.79 |
+| Web analytics | choosing the rule | 0.83 |
+| Scheduling tools | choosing the rule | 0.89 |
+| Form builders | sealed test | 0.81 |
+| Help desk tools | sealed test | 0.85 |
+| Email marketing tools | sealed test | 0.62 |
+| Error tracking tools | sealed test | 0.85 |
+| Feature flag tools | sealed test | 0.76 |
+
+Verdict: `SUCCESS`, five of five. The script is [`modelo.py`](modelo.py); run it on your own measurements with `python3 modelo.py <measurement ids> --top 20`. The raw answers and their citations for all eight categories are in `data/measurements/`.
+
+What it does not show: that getting onto those pages causes a product to be named. Well-known products are both written about and named, and the two halves share the same questions. It is a correlation, and several products appear on cited pages without ever being named. The causal test is a before/after experiment on one product.
 
 ## Get a report for your product
 
@@ -147,7 +300,7 @@ Command help, code comments and registry labels are in Spanish; reports come out
 - **One assistant.** Only Claude has been measured, through its command-line interface, which can differ from what a person sees in the app.
 - **Wide margins.** With 48 answers the 95% intervals are wide, and repeated answers to one question are not independent, so the true intervals are somewhat wider than shown.
 - **Only tracked products are counted.** If the assistant recommends a product that is not in the profile, it is missing from the table.
-- **The questions shape the result.** In each category one of the eight questions asks for an alternative to the best-known product (UptimeRobot, Google Analytics, Calendly), so that product's count includes answers that could hardly avoid naming it.
+- **The questions shape the result.** In each category one of the eight questions asks for an alternative to the best-known product, so that product's count includes answers that could hardly avoid naming it.
 - **Named is not praised.** A product counts as named even when the answer advises against it.
 - **The detector benchmark has one author**, the same as the detector.
 

@@ -1,0 +1,200 @@
+{
+ "id": "help-desk",
+ "language": "en",
+ "brand": {
+  "name": "Zendesk",
+  "aliases": [],
+  "domains": [
+   "zendesk.com"
+  ]
+ },
+ "competitors": [
+  {
+   "name": "Intercom",
+   "aliases": [],
+   "domains": [
+    "intercom.com"
+   ]
+  },
+  {
+   "name": "Freshdesk",
+   "aliases": [],
+   "domains": [
+    "freshdesk.com"
+   ]
+  },
+  {
+   "name": "Help Scout",
+   "aliases": [
+    "HelpScout"
+   ],
+   "domains": [
+    "helpscout.com"
+   ]
+  },
+  {
+   "name": "Front",
+   "aliases": [],
+   "domains": [
+    "front.com"
+   ],
+   "case_sensitive": true
+  },
+  {
+   "name": "Zoho Desk",
+   "aliases": [],
+   "domains": []
+  },
+  {
+   "name": "HubSpot Service Hub",
+   "aliases": [],
+   "domains": []
+  },
+  {
+   "name": "Gorgias",
+   "aliases": [],
+   "domains": [
+    "gorgias.com"
+   ]
+  },
+  {
+   "name": "Crisp",
+   "aliases": [],
+   "domains": [
+    "crisp.chat"
+   ],
+   "case_sensitive": true
+  },
+  {
+   "name": "Tidio",
+   "aliases": [],
+   "domains": [
+    "tidio.com"
+   ]
+  },
+  {
+   "name": "Groove",
+   "aliases": [],
+   "domains": [
+    "groovehq.com"
+   ],
+   "case_sensitive": true
+  },
+  {
+   "name": "Missive",
+   "aliases": [],
+   "domains": [
+    "missiveapp.com"
+   ],
+   "case_sensitive": true
+  },
+  {
+   "name": "Hiver",
+   "aliases": [],
+   "domains": [
+    "hiverhq.com"
+   ]
+  },
+  {
+   "name": "HelpCrunch",
+   "aliases": [],
+   "domains": [
+    "helpcrunch.com"
+   ]
+  },
+  {
+   "name": "Plain",
+   "aliases": [],
+   "domains": [
+    "plain.com"
+   ],
+   "case_sensitive": true
+  },
+  {
+   "name": "Pylon",
+   "aliases": [],
+   "domains": [
+    "usepylon.com"
+   ],
+   "case_sensitive": true
+  },
+  {
+   "name": "Chatwoot",
+   "aliases": [],
+   "domains": [
+    "chatwoot.com"
+   ]
+  },
+  {
+   "name": "Kayako",
+   "aliases": [],
+   "domains": [
+    "kayako.com"
+   ]
+  },
+  {
+   "name": "LiveAgent",
+   "aliases": [],
+   "domains": [
+    "liveagent.com"
+   ]
+  },
+  {
+   "name": "Re:amaze",
+   "aliases": [
+    "Reamaze"
+   ],
+   "domains": [
+    "reamaze.com"
+   ]
+  },
+  {
+   "name": "Helpwise",
+   "aliases": [],
+   "domains": [
+    "helpwise.io"
+   ]
+  },
+  {
+   "name": "Trengo",
+   "aliases": [],
+   "domains": [
+    "trengo.com"
+   ]
+  }
+ ],
+ "prompts": [
+  {
+   "id": "q1",
+   "text": "What are the best help desk tools for a small team?"
+  },
+  {
+   "id": "q2",
+   "text": "What is a good alternative to Zendesk?"
+  },
+  {
+   "id": "q3",
+   "text": "Which help desk tools have the best free plan?"
+  },
+  {
+   "id": "q4",
+   "text": "What is the cheapest help desk tool for a startup?"
+  },
+  {
+   "id": "q5",
+   "text": "Which open source or self-hosted help desk tools are there?"
+  },
+  {
+   "id": "q6",
+   "text": "Which help desk tool is easiest to set up for a solo founder?"
+  },
+  {
+   "id": "q7",
+   "text": "Which help desk tools are hosted in the EU or strongest on privacy?"
+  },
+  {
+   "id": "q8",
+   "text": "Which help desk tool is best for a growing SaaS company?"
+  }
+ ]
+}

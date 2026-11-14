@@ -1,0 +1,192 @@
+{
+ "id": "form-builders",
+ "language": "en",
+ "brand": {
+  "name": "Typeform",
+  "aliases": [],
+  "domains": [
+   "typeform.com"
+  ]
+ },
+ "competitors": [
+  {
+   "name": "Google Forms",
+   "aliases": [],
+   "domains": []
+  },
+  {
+   "name": "Microsoft Forms",
+   "aliases": [],
+   "domains": []
+  },
+  {
+   "name": "Jotform",
+   "aliases": [
+    "JotForm"
+   ],
+   "domains": [
+    "jotform.com"
+   ]
+  },
+  {
+   "name": "Tally",
+   "aliases": [],
+   "domains": [
+    "tally.so"
+   ],
+   "case_sensitive": true
+  },
+  {
+   "name": "Fillout",
+   "aliases": [],
+   "domains": [
+    "fillout.com"
+   ]
+  },
+  {
+   "name": "Formstack",
+   "aliases": [],
+   "domains": [
+    "formstack.com"
+   ]
+  },
+  {
+   "name": "Paperform",
+   "aliases": [],
+   "domains": [
+    "paperform.co"
+   ]
+  },
+  {
+   "name": "Wufoo",
+   "aliases": [],
+   "domains": [
+    "wufoo.com"
+   ]
+  },
+  {
+   "name": "Cognito Forms",
+   "aliases": [],
+   "domains": [
+    "cognitoforms.com"
+   ]
+  },
+  {
+   "name": "Formspree",
+   "aliases": [],
+   "domains": [
+    "formspree.io"
+   ]
+  },
+  {
+   "name": "Basin",
+   "aliases": [],
+   "domains": [
+    "usebasin.com"
+   ],
+   "case_sensitive": true
+  },
+  {
+   "name": "Getform",
+   "aliases": [],
+   "domains": [
+    "getform.io"
+   ]
+  },
+  {
+   "name": "Feathery",
+   "aliases": [],
+   "domains": [
+    "feathery.io"
+   ]
+  },
+  {
+   "name": "Formbricks",
+   "aliases": [],
+   "domains": [
+    "formbricks.com"
+   ]
+  },
+  {
+   "name": "HeyForm",
+   "aliases": [],
+   "domains": [
+    "heyform.net"
+   ]
+  },
+  {
+   "name": "Youform",
+   "aliases": [],
+   "domains": [
+    "youform.com"
+   ]
+  },
+  {
+   "name": "Formester",
+   "aliases": [],
+   "domains": [
+    "formester.com"
+   ]
+  },
+  {
+   "name": "SurveyMonkey",
+   "aliases": [],
+   "domains": [
+    "surveymonkey.com"
+   ]
+  },
+  {
+   "name": "Zoho Forms",
+   "aliases": [],
+   "domains": []
+  },
+  {
+   "name": "Formcarry",
+   "aliases": [],
+   "domains": [
+    "formcarry.com"
+   ]
+  },
+  {
+   "name": "Fabform",
+   "aliases": [],
+   "domains": [
+    "fabform.io"
+   ]
+  }
+ ],
+ "prompts": [
+  {
+   "id": "q1",
+   "text": "What are the best online form builders for a small team?"
+  },
+  {
+   "id": "q2",
+   "text": "What is a good alternative to Typeform?"
+  },
+  {
+   "id": "q3",
+   "text": "Which online form builders have the best free plan?"
+  },
+  {
+   "id": "q4",
+   "text": "What is the cheapest online form builder for a startup?"
+  },
+  {
+   "id": "q5",
+   "text": "Which open source or self-hosted online form builders are there?"
+  },
+  {
+   "id": "q6",
+   "text": "Which online form builder is easiest to set up for a solo developer?"
+  },
+  {
+   "id": "q7",
+   "text": "Which online form builders are hosted in the EU or strongest on privacy?"
+  },
+  {
+   "id": "q8",
+   "text": "Which online form builder is best for a growing SaaS company?"
+  }
+ ]
+}

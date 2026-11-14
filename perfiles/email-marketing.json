@@ -1,0 +1,200 @@
+{
+ "id": "email-marketing",
+ "language": "en",
+ "brand": {
+  "name": "Mailchimp",
+  "aliases": [],
+  "domains": [
+   "mailchimp.com"
+  ]
+ },
+ "competitors": [
+  {
+   "name": "Brevo",
+   "aliases": [
+    "Sendinblue"
+   ],
+   "domains": [
+    "brevo.com"
+   ]
+  },
+  {
+   "name": "MailerLite",
+   "aliases": [],
+   "domains": [
+    "mailerlite.com"
+   ]
+  },
+  {
+   "name": "ConvertKit",
+   "aliases": [],
+   "domains": [
+    "kit.com",
+    "convertkit.com"
+   ]
+  },
+  {
+   "name": "Klaviyo",
+   "aliases": [],
+   "domains": [
+    "klaviyo.com"
+   ]
+  },
+  {
+   "name": "ActiveCampaign",
+   "aliases": [],
+   "domains": [
+    "activecampaign.com"
+   ]
+  },
+  {
+   "name": "beehiiv",
+   "aliases": [],
+   "domains": [
+    "beehiiv.com"
+   ]
+  },
+  {
+   "name": "Buttondown",
+   "aliases": [],
+   "domains": [
+    "buttondown.com"
+   ]
+  },
+  {
+   "name": "EmailOctopus",
+   "aliases": [],
+   "domains": [
+    "emailoctopus.com"
+   ]
+  },
+  {
+   "name": "Loops",
+   "aliases": [],
+   "domains": [
+    "loops.so"
+   ],
+   "case_sensitive": true
+  },
+  {
+   "name": "Sender",
+   "aliases": [],
+   "domains": [
+    "sender.net"
+   ],
+   "case_sensitive": true
+  },
+  {
+   "name": "Moosend",
+   "aliases": [],
+   "domains": [
+    "moosend.com"
+   ]
+  },
+  {
+   "name": "Omnisend",
+   "aliases": [],
+   "domains": [
+    "omnisend.com"
+   ]
+  },
+  {
+   "name": "GetResponse",
+   "aliases": [],
+   "domains": [
+    "getresponse.com"
+   ]
+  },
+  {
+   "name": "AWeber",
+   "aliases": [],
+   "domains": [
+    "aweber.com"
+   ]
+  },
+  {
+   "name": "Constant Contact",
+   "aliases": [],
+   "domains": [
+    "constantcontact.com"
+   ]
+  },
+  {
+   "name": "Campaign Monitor",
+   "aliases": [],
+   "domains": [
+    "campaignmonitor.com"
+   ]
+  },
+  {
+   "name": "Mailjet",
+   "aliases": [],
+   "domains": [
+    "mailjet.com"
+   ]
+  },
+  {
+   "name": "Listmonk",
+   "aliases": [],
+   "domains": [
+    "listmonk.app"
+   ]
+  },
+  {
+   "name": "Sendy",
+   "aliases": [],
+   "domains": [
+    "sendy.co"
+   ]
+  },
+  {
+   "name": "Flodesk",
+   "aliases": [],
+   "domains": [
+    "flodesk.com"
+   ]
+  },
+  {
+   "name": "Drip",
+   "aliases": [],
+   "domains": [
+    "drip.com"
+   ],
+   "case_sensitive": true
+  }
+ ],
+ "prompts": [
+  {
+   "id": "q1",
+   "text": "What are the best email marketing tools for a small team?"
+  },
+  {
+   "id": "q2",
+   "text": "What is a good alternative to Mailchimp?"
+  },
+  {
+   "id": "q3",
+   "text": "Which email marketing tools have the best free plan?"
+  },
+  {
+   "id": "q4",
+   "text": "What is the cheapest email marketing tool for a startup?"
+  },
+  {
+   "id": "q5",
+   "text": "Which open source or self-hosted email marketing tools are there?"
+  },
+  {
+   "id": "q6",
+   "text": "Which email marketing tool is easiest to set up for a solo creator?"
+  },
+  {
+   "id": "q7",
+   "text": "Which email marketing tools are hosted in the EU or strongest on privacy?"
+  },
+  {
+   "id": "q8",
+   "text": "Which email marketing tool is best for a growing SaaS company?"
+  }
+ ]
+}
