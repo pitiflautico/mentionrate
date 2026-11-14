@@ -69,6 +69,41 @@ Web analytics tools: 8 buyer questions, each asked 6 times to Claude (sonnet) wi
 | Tinylytics | 0 of 48 | 0% | 0%–7% |
 | Usermaven | 0 of 48 | 0% | 0%–7% |
 | Vercel Analytics | 0 of 48 | 0% | 0%–7% |
+
+Scheduling tools: 8 buyer questions, each asked 6 times to Claude (sonnet) with web search on 2026-11-14. 48 answers.
+
+| Product | Answers that name it | Share | 95% interval |
+|---|---|---|---|
+| Calendly | 44 of 48 | 92% | 80%–97% |
+| Cal.com | 39 of 48 | 81% | 68%–90% |
+| Acuity Scheduling | 21 of 48 | 44% | 31%–58% |
+| Google Calendar | 15 of 48 | 31% | 20%–45% |
+| SavvyCal | 15 of 48 | 31% | 20%–45% |
+| Square Appointments | 13 of 48 | 27% | 17%–41% |
+| Doodle | 12 of 48 | 25% | 15%–39% |
+| TidyCal | 12 of 48 | 25% | 15%–39% |
+| Microsoft Bookings | 11 of 48 | 23% | 13%–37% |
+| Zoho Bookings | 9 of 48 | 19% | 10%–32% |
+| SimplyBook.me | 7 of 48 | 15% | 7%–27% |
+| Chili Piper | 6 of 48 | 12% | 6%–25% |
+| HubSpot Meetings | 6 of 48 | 12% | 6%–25% |
+| Koalendar | 6 of 48 | 12% | 6%–25% |
+| Setmore | 6 of 48 | 12% | 6%–25% |
+| YouCanBookMe | 4 of 48 | 8% | 3%–20% |
+| Zeeg | 3 of 48 | 6% | 2%–17% |
+| Zcal | 2 of 48 | 4% | 1%–14% |
+| Appointlet | 0 of 48 | 0% | 0%–7% |
+| Bookedin | 0 of 48 | 0% | 0%–7% |
+| CalendarHero | 0 of 48 | 0% | 0%–7% |
+| Lemcal | 0 of 48 | 0% | 0%–7% |
+| Morgen | 0 of 48 | 0% | 0%–7% |
+| NeetoCal | 0 of 48 | 0% | 0%–7% |
+| OnceHub | 0 of 48 | 0% | 0%–7% |
+| Picktime | 0 of 48 | 0% | 0%–7% |
+| Reclaim | 0 of 48 | 0% | 0%–7% |
+| Sprintful | 0 of 48 | 0% | 0%–7% |
+| Trafft | 0 of 48 | 0% | 0%–7% |
+| Vyte | 0 of 48 | 0% | 0%–7% |
 <!-- results:end -->
 
 Every answer behind these numbers is in [`data/measurements/`](data/measurements/), one JSON object per line, exactly as the assistant returned it.
@@ -112,7 +147,7 @@ Command help, code comments and registry labels are in Spanish; reports come out
 - **One assistant.** Only Claude has been measured, through its command-line interface, which can differ from what a person sees in the app.
 - **Wide margins.** With 48 answers the 95% intervals are wide, and repeated answers to one question are not independent, so the true intervals are somewhat wider than shown.
 - **Only tracked products are counted.** If the assistant recommends a product that is not in the profile, it is missing from the table.
-- **The questions shape the result.** One of the eight uptime questions asks for an alternative to UptimeRobot, and one web analytics question asks for an alternative to Google Analytics, so their counts include answers that could hardly avoid naming them.
+- **The questions shape the result.** In each category one of the eight questions asks for an alternative to the best-known product (UptimeRobot, Google Analytics, Calendly), so that product's count includes answers that could hardly avoid naming it.
 - **Named is not praised.** A product counts as named even when the answer advises against it.
 - **The detector benchmark has one author**, the same as the detector.
 
