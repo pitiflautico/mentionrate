@@ -15,8 +15,10 @@ from genesis.audit import (
     start_before_after,
     summarize,
 )
+from genesis.detect import Brand
 from genesis.engines import Answer, ClaudeCliEngine, FakeEngine, split_sources
 from genesis.evaluator import evaluate, run_detector_bench
+from genesis.pages import MIN_TEXT, cited_pages, most_cited
 from genesis.registry import Registry
 from genesis.report import render
 from genesis.site import render_landing
@@ -292,3 +294,49 @@ def test_ties_are_ordered_by_name_so_reports_are_reproducible():
     from collections import Counter
 
     assert ranked(Counter({"b.test": 2, "c.test": 5, "a.test": 2})) == [("c.test", 5), ("a.test", 2), ("b.test", 2)]
+
+
+# --- páginas citadas -------------------------------------------------------
+
+CITING = [
+    {"citations": ["https://b.test/list", "https://b.test/list", "https://acme.test/blog"]},
+    {"citations": ["https://b.test/list", "https://a.test/top", "https://blocked.test/x"]},
+    {"citations": ["https://a.test/top", "https://blocked.test/x", "https://blocked.test/x"]},
+    {"citations": ["https://b.test/list", "https://blocked.test/x"]},
+]
+
+
+def test_most_cited_counts_answers_not_repeats_and_breaks_ties_by_url():
+    assert most_cited(CITING, 3) == [("https://b.test/list", 3), ("https://blocked.test/x", 3), ("https://a.test/top", 2)]
+
+
+def test_cited_pages_marks_presence_and_own_pages_and_skips_unreadable():
+    filler = " relleno" * MIN_TEXT
+    texts = {
+        "https://b.test/list": "Las mejores: Rival y Otro." + filler,
+        "https://a.test/top": "Comparativa: Acme frente a Rival." + filler,
+        "https://acme.test/blog": "Acme explica su producto." + filler,
+        "https://blocked.test/x": "Acme",  # demasiado corta: no se pudo leer
+    }
+    rows = cited_pages(CITING, Brand.from_dict(PROFILE["brand"]), 10, fetch=texts.__getitem__)
+    assert rows == [
+        {"url": "https://b.test/list", "cited": 3, "own": False, "present": False},
+        {"url": "https://a.test/top", "cited": 2, "own": False, "present": True},
+        {"url": "https://acme.test/blog", "cited": 1, "own": True, "present": True},
+    ]
+
+
+def test_report_lists_cited_pages_only_when_given(reg):
+    s = summarize(reg, run_measurement(reg, {**PROFILE, "language": "en"}, ScriptedEngine(), samples=1))
+    assert "The pages the assistant relies on most" not in render(s)
+    html = render(s, pages=[
+        {"url": "https://www.b.test/list/", "cited": 3, "own": False, "present": False},
+        {"url": "https://a.test/top?x=<1>", "cited": 2, "own": False, "present": True},
+        {"url": "https://acme.test/blog", "cited": 1, "own": True, "present": True},
+        {"url": "javascript:alert(1)", "cited": 1, "own": False, "present": False},
+    ])  # fmt: skip
+    assert "Acme appears on 1 of the 3 most cited pages that are not its own." in html
+    assert "<a href='https://www.b.test/list/' rel='nofollow noopener'>b.test/list</a>" in html
+    assert "3 of 9</td><td class='miss'>No</td>" in html and "<td class='own'>Own page</td>" in html
+    assert "x=&lt;1&gt;" in html and "x=<1>" not in html
+    assert "href='javascript:" not in html and "Names Acme?" in html

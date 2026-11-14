@@ -257,7 +257,9 @@ The rule was chosen on three categories. Before looking at five more, the predic
 | Error tracking tools | sealed test | 0.85 |
 | Feature flag tools | sealed test | 0.76 |
 
-Verdict: `SUCCESS`, five of five. The script is [`modelo.py`](modelo.py); run it on your own measurements with `python3 modelo.py <measurement ids> --top 20`. The raw answers and their citations for all eight categories are in `data/measurements/`.
+Verdict: `SUCCESS`, five of five. The script is [`modelo.py`](modelo.py); run it on your own measurements with `python3 modelo.py <measurement ids> --top 20`. The raw answers and their citations for all eight categories are in `data/measurements/`. The sealed design records the hash of `modelo.py` as it was in commit `f836f87`; the page reader has since moved to `genesis/pages.py` and the script gives the same eight correlations.
+
+Every report lists the 12 pages its category's answers cited most and whether each one names the product.
 
 What it does not show: that getting onto those pages causes a product to be named. Well-known products are both written about and named, and the two halves share the same questions. It is a correlation, and several products appear on cited pages without ever being named. The causal test is a before/after experiment on one product.
 

@@ -11,34 +11,13 @@ Uso: python3 modelo.py MED-0003 MED-0004 ...   [--top 12] [--con-propias]
 from __future__ import annotations
 
 import argparse
-import hashlib
-import html
-import re
-import subprocess
-from collections import Counter
 from pathlib import Path
 
 from genesis.detect import Brand, detect_normalized, host_of, owns
+from genesis.pages import MIN_TEXT, most_cited, page_text
 from genesis.registry import Registry
 
 ROOT = Path(__file__).resolve().parent
-CACHE = ROOT / "registro" / "paginas"
-TAG_RE = re.compile(r"(?is)<(script|style|noscript|svg)\b.*?</\1>")
-
-
-def page_text(url: str) -> str:
-    """Texto visible de una página, con caché en disco. Cadena vacía si no se pudo descargar."""
-    CACHE.mkdir(parents=True, exist_ok=True)
-    path = CACHE / (hashlib.sha256(url.encode()).hexdigest()[:24] + ".html")
-    if not path.exists():
-        got = subprocess.run(
-            ["curl", "-sL", "-m", "25", "-A", "Mozilla/5.0 (compatible; research-bot)", "-o", str(path), url],
-            capture_output=True,
-        )
-        if got.returncode != 0 or not path.exists():
-            path.write_bytes(b"")
-    raw = path.read_text(encoding="utf-8", errors="ignore")
-    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", TAG_RE.sub(" ", raw))))
 
 
 def ranks(values: list[float]) -> list[float]:
@@ -70,10 +49,9 @@ def analyse(reg: Registry, exp_id: str, top: int, with_own: bool) -> dict:
     source_half = [r for r in runs if r["sample"] % 2 == 0]
     target_half = [r for r in runs if r["sample"] % 2 == 1]
 
-    cited = Counter(url for r in source_half for url in set(r["citations"]))
-    pages = sorted(cited.items(), key=lambda kv: (-kv[1], kv[0]))[:top]
+    pages = most_cited(source_half, top)
     texts = {url: page_text(url) for url, _ in pages}
-    readable = [(url, w) for url, w in pages if len(texts[url]) > 500]
+    readable = [(url, w) for url, w in pages if len(texts[url]) >= MIN_TEXT]
     total = sum(w for _, w in readable) or 1
 
     rows = []

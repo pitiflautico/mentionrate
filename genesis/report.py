@@ -30,6 +30,7 @@ tr.me td { font-weight:700; }
 .own { color:var(--accent); font-weight:600; }
 ul { padding-left:20px; } li { margin:4px 0; }
 .meta { color:var(--soft); font-size:.88rem; }
+a { color:var(--accent); } td.url { word-break:break-word; }
 """
 
 
@@ -46,6 +47,11 @@ TEXT = {
         "h_prompts": "Pregunta a pregunta",
         "th_prompts": ["Pregunta", "Marcas nombradas (veces)"],
         "none_named": "ninguna de las marcas seguidas",
+        "h_pages": "Las páginas en las que más se apoya el asistente",
+        "pages_sum": "{name} aparece en {k} de las {m} páginas más citadas que no son suyas.",
+        "pages_note": "En una prueba sellada sobre cinco categorías, los productos presentes en las páginas más citadas de su categoría fueron los más nombrados. Es una correlación, no una garantía: hay productos que salen en estas páginas y nunca se nombran. Las páginas se leyeron después de la medición; no se listan las que no se pudieron leer (bloqueo o texto cargado por script).",
+        "th_pages": ["Página", "Respuestas que la citan", "¿Nombra a {name}?"],
+        "yes": "Sí", "no": "No", "own_page": "Página propia",
         "h_others": "Otros nombres que el asistente destaca",
         "others_note": "Nombres en negrita que no están en la lista seguida y salen en dos o más respuestas. Es una pista para ampliar la lista, no una medición: puede incluir títulos de sección.",
         "th_others": ["Nombre", "Respuestas"],
@@ -75,6 +81,11 @@ TEXT = {
         "h_prompts": "Question by question",
         "th_prompts": ["Question", "Products named (times)"],
         "none_named": "none of the tracked products",
+        "h_pages": "The pages the assistant relies on most",
+        "pages_sum": "{name} appears on {k} of the {m} most cited pages that are not its own.",
+        "pages_note": "In a sealed test on five categories, the products present on a category's most cited pages were the ones named most often. It is a correlation, not a guarantee: some products appear on these pages and are never named. The pages were read after the measurement; pages that could not be read (blocked, or text loaded by script) are not listed.",
+        "th_pages": ["Page", "Answers that cite it", "Names {name}?"],
+        "yes": "Yes", "no": "No", "own_page": "Own page",
         "h_others": "Other names the assistant highlights",
         "others_note": "Names in bold that are not on the tracked list and appear in two or more answers. A lead for widening the list, not a measurement: it can include section headings.",
         "th_others": ["Name", "Answers"],
@@ -103,8 +114,39 @@ def _head(cells: list[str]) -> str:
     return "<thead><tr>" + "".join(f"<th>{escape(c)}</th>" for c in cells) + "</tr></thead>"
 
 
-def render(summary: dict, noindex: bool = False) -> str:
-    """``noindex`` pide a los buscadores que no indexen la página (informes dirigidos a una marca)."""
+def _page_cell(url: str) -> str:
+    """Enlace a una página citada. Solo se enlaza si es http(s): la dirección viene de la respuesta del asistente."""
+    shown = url.split("://", 1)[-1].removeprefix("www.").rstrip("/")
+    label = escape(shown if len(shown) <= 80 else shown[:79] + "…")
+    if not url.startswith(("http://", "https://")):
+        return label
+    return f"<a href='{escape(url)}' rel='nofollow noopener'>{label}</a>"
+
+
+def _pages_section(tx: dict, name: str, pages: list[dict], n: int) -> str:
+    status = {True: ("", tx["yes"]), False: ("miss", tx["no"])}
+    rows = ""
+    for p in pages:
+        css, label = ("own", tx["own_page"]) if p["own"] else status[p["present"]]
+        rows += (
+            f"<tr><td class='url'>{_page_cell(p['url'])}</td><td class='n'>{p['cited']} {tx['of']} {n}</td>"
+            f"<td class='{css}'>{label}</td></tr>"
+        )
+    others = [p for p in pages if not p["own"]]
+    summary = tx["pages_sum"].format(name=name, k=sum(p["present"] for p in others), m=len(others))
+    head = [c.format(name=name) for c in tx["th_pages"]]
+    return (
+        f"<h2>{tx['h_pages']}</h2>\n<p>{summary}</p>\n"
+        f"<div class='wrap'><table><thead><tr>{''.join(f'<th>{c}</th>' for c in head)}</tr></thead>\n"
+        f"<tbody>{rows}</tbody></table></div>\n<p class='meta'>{tx['pages_note']}</p>\n"
+    )
+
+
+def render(summary: dict, noindex: bool = False, pages: list[dict] | None = None) -> str:
+    """``noindex`` pide a los buscadores que no indexen la página (informes dirigidos a una marca).
+
+    ``pages`` son las filas de ``pages.cited_pages`` para la marca del informe; sin ellas no hay sección.
+    """
     lang = summary.get("language", "es") if summary.get("language") in TEXT else "es"
     tx = TEXT[lang]
     t = summary["target"]
@@ -143,6 +185,7 @@ def render(summary: dict, noindex: bool = False) -> str:
         versions=escape(", ".join(summary["code_versions"])),
     )  # fmt: skip
     prompt_head = [tx["th_prompts"][0], t["name"], tx["th_prompts"][1]]
+    pages_html = _pages_section(tx, name, pages, n) if pages else ""
     return f"""<!doctype html>
 <html lang="{tx['lang']}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 {'<meta name="robots" content="noindex">' if noindex else ''}<title>{tx['title'].format(name=name)}</title><style>{CSS}</style></head><body><main>
@@ -160,7 +203,7 @@ def render(summary: dict, noindex: bool = False) -> str:
 <div class="wrap"><table>{_head(prompt_head)}
 <tbody>{prompt_rows}</tbody></table></div>
 
-<h2>{tx['h_others']}</h2>
+{pages_html}<h2>{tx['h_others']}</h2>
 <p class="meta">{tx['others_note']}</p>
 <div class="wrap"><table>{_head(tx['th_others'])}
 <tbody>{other_rows}</tbody></table></div>
