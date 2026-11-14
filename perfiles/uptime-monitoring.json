@@ -1,0 +1,41 @@
+{
+  "id": "uptime-monitoring",
+  "language": "en",
+  "brand": {"name": "UptimeRobot", "aliases": ["Uptime Robot"], "domains": ["uptimerobot.com"]},
+  "competitors": [
+    {"name": "Better Stack", "aliases": ["BetterStack", "Better Uptime"], "domains": ["betterstack.com", "betteruptime.com"]},
+    {"name": "Pingdom", "aliases": [], "domains": ["pingdom.com"]},
+    {"name": "StatusCake", "aliases": ["Status Cake"], "domains": ["statuscake.com"]},
+    {"name": "Uptime Kuma", "aliases": [], "domains": []},
+    {"name": "Hyperping", "aliases": [], "domains": ["hyperping.com", "hyperping.io"]},
+    {"name": "Pulsetic", "aliases": [], "domains": ["pulsetic.com"]},
+    {"name": "OpenStatus", "aliases": ["Open Status"], "domains": ["openstatus.dev"]},
+    {"name": "Instatus", "aliases": [], "domains": ["instatus.com"]},
+    {"name": "Cronitor", "aliases": [], "domains": ["cronitor.io"]},
+    {"name": "Checkly", "aliases": [], "domains": ["checklyhq.com"]},
+    {"name": "HetrixTools", "aliases": ["Hetrix Tools"], "domains": ["hetrixtools.com"]},
+    {"name": "Updown.io", "aliases": [], "domains": ["updown.io"]},
+    {"name": "Oh Dear", "aliases": ["OhDear"], "domains": ["ohdear.app"]},
+    {"name": "Freshping", "aliases": [], "domains": ["freshping.io"]},
+    {"name": "Site24x7", "aliases": [], "domains": ["site24x7.com"]},
+    {"name": "Datadog", "aliases": [], "domains": ["datadoghq.com"]},
+    {"name": "Healthchecks.io", "aliases": [], "domains": ["healthchecks.io"]},
+    {"name": "Statuspage", "aliases": [], "domains": ["statuspage.io"], "case_sensitive": true},
+    {"name": "Uptime.com", "aliases": [], "domains": ["uptime.com"]},
+    {"name": "Gatus", "aliases": [], "domains": ["gatus.io"]},
+    {"name": "Uptimia", "aliases": [], "domains": ["uptimia.com"]},
+    {"name": "Robotalp", "aliases": ["Robot.alp"], "domains": ["robotalp.com"]},
+    {"name": "Odown", "aliases": [], "domains": ["odown.com"]},
+    {"name": "StatusGator", "aliases": [], "domains": ["statusgator.com"]}
+  ],
+  "prompts": [
+    {"id": "q1", "text": "What are the best uptime monitoring tools for a small SaaS team?"},
+    {"id": "q2", "text": "Which website monitoring service would you recommend for a solo developer on a budget?"},
+    {"id": "q3", "text": "What is a good alternative to UptimeRobot?"},
+    {"id": "q4", "text": "Which tools offer both uptime monitoring and a public status page?"},
+    {"id": "q5", "text": "What is the best status page tool for a startup?"},
+    {"id": "q6", "text": "Which uptime monitoring tools have the best free plan?"},
+    {"id": "q7", "text": "What should I use to monitor cron jobs and scheduled tasks?"},
+    {"id": "q8", "text": "Which uptime monitors can check an API endpoint and alert on Slack?"}
+  ]
+}

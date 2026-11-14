@@ -1,0 +1,9 @@
+[project]
+name = "genesis"
+version = "0.1.0"
+description = "Medición y experimentos de visibilidad de marcas en asistentes de IA"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

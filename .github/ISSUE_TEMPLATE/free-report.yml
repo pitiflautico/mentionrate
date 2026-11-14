@@ -1,0 +1,44 @@
+name: Free AI visibility report
+description: Ask for a sample report on how often an AI assistant names your product.
+title: "Report request: "
+labels: ["report-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This request is public. Do not include anything private. The report is posted as a reply here.
+  - type: input
+    id: product
+    attributes:
+      label: Product name
+    validations:
+      required: true
+  - type: input
+    id: site
+    attributes:
+      label: Product site
+      placeholder: https://
+    validations:
+      required: true
+  - type: textarea
+    id: competitors
+    attributes:
+      label: Competitors
+      description: At least two products a buyer would compare you with.
+    validations:
+      required: true
+  - type: textarea
+    id: questions
+    attributes:
+      label: Buyer questions (optional)
+      description: Questions a buyer in your category would ask an assistant. Leave empty and we write them.
+  - type: dropdown
+    id: plan
+    attributes:
+      label: Plan
+      options:
+        - Sample (free)
+        - Audit (€49)
+        - Tracking (€149 per month)
+    validations:
+      required: true

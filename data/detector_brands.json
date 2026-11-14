@@ -1,0 +1,9 @@
+{
+  "boolu": {"name": "Boolu", "aliases": [], "domains": ["boolu.app"]},
+  "pastel": {"name": "Pastel", "aliases": [], "domains": ["usepastel.com"], "case_sensitive": true},
+  "marker": {"name": "Marker.io", "aliases": [], "domains": ["marker.io"]},
+  "bugherd": {"name": "BugHerd", "aliases": ["Bug Herd"], "domains": ["bugherd.com"]},
+  "colchonclub": {"name": "Colchón Club", "aliases": ["Colchonclub"], "domains": ["colchonclub.es"]},
+  "loom": {"name": "Loom", "aliases": [], "domains": ["loom.com"], "case_sensitive": true},
+  "corteingles": {"name": "El Corte Inglés", "aliases": [], "domains": ["elcorteingles.es"]}
+}
